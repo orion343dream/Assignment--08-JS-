@@ -3,244 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment Showcase</title>
+
+    <title>Case 01</title>
+
     <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            --varlinear: linear-gradient(to right, #8e2de2, #ff0c0c);
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-image: url('Assets/wallpaperflare.com_wallpaper (6).jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: rgba(0, 0, 0, 0.75);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            padding: 40px;
-        }
-
-        header {
-            text-align: center;
-            color: #a0acf1;
-            margin-bottom: 40px;
-            transition: backdrop-filter 0.3s ease;
-        }
-
-        header:hover {
-            backdrop-filter: blur(10px);
-        }
-
-        header h1 {
-            font-size: 36px;
-            margin-bottom: 10px;
-            color: #ff0c0c;
-        }
-
-        header p {
-            font-size: 18px;
-            margin-bottom: 20px;
-            transition: backdrop-filter 0.3s ease;
-        }
-
-        header p:hover {
-            backdrop-filter: blur(10px);
-        }
-
-        header .description {
-            font-size: 16px;
-            line-height: 1.6;
-            max-width: 90%;
-            margin: 0 auto;
-            transition: backdrop-filter 0.3s ease;
-        }
-
-        header .description:hover {
-            backdrop-filter: blur(10px);
-        }
-
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            grid-gap: 30px;
-            flex-grow: 1;
-        }
-
-        .case-box {
-            background-color: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .case-box:hover {
-            transform: translateY(-10px);
-        }
-
-        .case-box img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-            transition: opacity 0.3s ease;
-        }
-
-        .case-box:hover img {
-            opacity: 0.5;
-        }
-
-        .case-box .buttons {
+        main{
+            width: 100vw;
+            height: 50vh;
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            gap: 10px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .case-box:hover .buttons {
-            opacity: 1;
-        }
-
-        .case-box .buttons a {
-            display: inline-block;
-            padding: 10px 40px;
-            color: var(--varlinear);
-            text-decoration: none;
-            border-radius: 40px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .case-box .buttons .view-code {
-            background: linear-gradient(to right, #8e2de2, #4a00e0);
-        }
-
-        .case-box .buttons .view-project {
-            background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff);
-        }
-
-        .case-box .buttons a:hover {
-            opacity: 0.8;
-        }
-
-        .case-box .label {
-            position: absolute;
+            top: 0;
             bottom: 0;
             left: 0;
-            width: 100%;
-            padding: 10px;
-            text-align: center;
-            font-size: 14px;
+            right: 0;
+            margin: auto;
+        }
+        .home-img-section{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+        .home-gif{
+            width: 500px;
+            height: 300px;
+            background-image: url("asset/home.gif");
+            background-position: center;
+            background-size: cover;
+        }
+        .man-img-section{
+            width: calc(100vw - 500px);
+            height: 100%;
+            position: absolute;
+            display: flex;
+        }
+        .man-img-section>div{
+            width: 150px;
+            height: 300px;
+            background-image: url("asset/Human walk cycle.gif");
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            top: calc(100% - 300px);
+        }
+        .man-img-section>h1{
+            width: 50px;
+            height: 100px;
+            position: relative;
+            top: calc(100% - 300px);
+            padding: 20px;
+            font-size: 50px;
+            color: #6b2172;
+        }
+        button{
+            width: 150px;
+            height: 40px;
+            font-size: 20px;
             font-weight: bold;
-            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            bottom: 100px;
+            color: #070f3d;
+            border: none;
         }
-
-        footer {
-            padding: 5px;
-            text-align: center;
-            font-style: italic;
-            font-size: 14px;
-            color: #333;
-            background: #ffffff;
-            border-radius: 40px;
+        #btn-start{
+            background-color: #2a9364;
         }
-
-        footer p {
-            margin-bottom: 5px;
-        }
-
-        footer p:last-child {
-            margin-bottom: 0;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            }
-
-            .case-box .buttons a {
-                padding: 8px 30px;
-                font-size: 14px;
-            }
+        #btn-end{
+            background-color: #6b2172;
         }
     </style>
+
 </head>
 <body>
-<header>
-    <h1>Assignment Showcase</h1>
-    <p>Explore our showcased assignments and projects.</p>
-    <div class="description">
-        This showcase highlights a selection of HTML and CSS assignments completed by students at our university. These assignments were designed to challenge students' understanding of web development fundamentals, responsive design, and modern styling techniques. Each case showcases the student's ability to create visually appealing and functional web pages using a variety of HTML elements, CSS properties, and layout strategies. We hope these examples inspire and encourage you to continue exploring the world of web development.
-    </div>
-</header>
+<main>
+    <section class="man-img-section">
+        <div></div>
+        <h1 id="h1-1">A</h1>
+        <div></div>
+        <h1 id="h1-2">B</h1>
+        <div></div>
+        <h1 id="h1-3">C</h1>
+        <div></div>
+        <h1 id="h1-4">D</h1>
+        <div></div>
+        <h1 id="h1-5">E</h1>
+        <div></div>
+        <h1 id="h1-6">F</h1>
+    </section>
+    <section class="home-img-section">
+        <div class="home-gif"></div>
+    </section>
+</main>
+<button type="button" id="btn-start" class="btn-start">Start</button>
+<button type="button" id="btn-end" class="btn-end">end</button>
 
-<div class="container">
-    <div class="case-box">
-        <img src="Assets/wallpaperflare.com_wallpaper%20(4).jpg" alt="Case 1">
-        <div class="buttons">
-            <a href="https://github.com/orion343dream/HTML-CSS-Assignment_04/tree/main/Cases/case%2001" target="_blank" class="view-code">View Code</a>
-            <a href="Cases/case 01/index.html" target="_blank" class="view-project">View Project</a>
-        </div>
-        <div class="label">Case 1</div>
-    </div>
-    <div class="case-box">
-        <img src="Assets/purple-flowers-8500x4912-12102.jpg" alt="Case 2">
-        <div class="buttons">
-            <a href="https://github.com/orion343dream/HTML-CSS-Assignment_04/tree/main/Cases/case%2002" target="_blank" class="view-code">View Code</a>
-            <a href="Cases/case 02/index.html" target="_blank" class="view-project">View Project</a>
-        </div>
-        <div class="label">Case 2</div>
-    </div>
-    <div class="case-box">
-        <img src="Assets/wallpaperflare.com_wallpaper%20(4).jpg" alt="Case 3">
-        <div class="buttons">
-            <a href="https://github.com/orion343dream/HTML-CSS-Assignment_04/tree/main/Cases/case%2003" target="_blank" class="view-code">View Code</a>
-            <a href="Cases/case 03/index.html" target="_blank" class="view-project">View Project</a>
-        </div>
-        <div class="label">Case 3</div>
-    </div>
-    <div class="case-box">
-        <img src="Assets/purple-flowers-8500x4912-12102.jpg" alt="Case 4">
-        <div class="buttons">
-            <a href="https://github.com/orion343dream/HTML-CSS-Assignment_04/tree/main/Cases/case%2004" target="_blank" class="view-code">View Code</a>
-            <a href="Cases/case 04/index.html" target="_blank" class="view-project">View Project</a>
-        </div>
-        <div class="label">Case 4</div>
-    </div>
-    <div class="case-box">
-        <img src="Assets/wallpaperflare.com_wallpaper%20(4).jpg" alt="Case 5">
-        <div class="buttons">
-            <a href="https://github.com/orion343dream/HTML-CSS-Assignment_04/tree/main/Cases/case%2005" target="_blank" class="view-code">View Code</a>
-            <a href="Cases/case 05/html.html" target="_blank" class="view-project">View Project</a>
-        </div>
-        <div class="label">Case 5</div>
-    </div>
-    <div class="case-box">
-        <img src="Assets/purple-flowers-8500x4912-12102.jpg" alt="Case 6">
-        <div class="buttons">
-            <a href="https://github.com/orion343dream/HTML-CSS-Assignment_04/tree/main/Cases/case%2006" target="_blank" class="view-code">View Code</a>
-            <a href="Cases/case 06/index.html" target="_blank" class="view-project">View Project</a>
-        </div>
-        <div class="label">Case 6</div>
-    </div>
-</div><br>
 
-<footer>
-    <br>
-    <p>&copy; Developed by ORION. All rights reserved.</p>
-</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+    let h1_1 = $("#h1-1");
+    let h1_2 = $("#h1-2");
+    let h1_3 = $("#h1-3");
+    let h1_4 = $("#h1-4");
+    let h1_5 = $("#h1-5");
+    let h1_6 = $("#h1-6");
+    let btnStart = $("#btn-start");
+    let btnEnd = $("#btn-end");
+
+    btnStart.css("display", "block");
+    btnEnd.css("display", "none");
+
+    let arr = ["A" , "B" , "C" , "D" , "E" , "F"];
+
+    let arrRotate = () => {
+        arr.unshift(arr.pop());
+        h1_1.text(arr[0]);
+        h1_2.text(arr[1]);
+        h1_3.text(arr[2]);
+        h1_4.text(arr[3]);
+        h1_5.text(arr[4]);
+        h1_6.text(arr[5]);
+    };
+
+    let interval;
+
+    btnStart.on('click',function (){
+        interval = setInterval(arrRotate,3000);
+        btnStart.css("display", "none");
+        btnEnd.css("display", "block");
+    });
+    btnEnd.on('click',function (){
+        clearInterval(interval);
+        btnStart.css("display", "block");
+        btnEnd.css("display", "none");
+    });
+</script>
 </body>
 </html>
